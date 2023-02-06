@@ -1,0 +1,49 @@
+@import '_variables'
+@import ../fonts/_fonts
+@import ./_reset
+@import ../components/content/_content
+@import ../components/sidebar/_sidebar
+
+.wrapper
+    min-height: 100%
+    overflow: hidden
+    display: flex
+    flex-direction: column
+
+.page
+    height: 100%
+    background: $bg-color
+
+    @media(max-width: $mobile)
+        background: $white
+    
+    &__container
+        margin: 0px auto
+        max-width: 1192.22px
+        height: 100%
+        padding: 60px 0px
+
+        @media(max-width: $mobile)
+            padding: 15px 
+
+    &__title
+        padding-bottom: 30px
+        font-family: 'Playfair Display'
+        font-weight: 400
+        font-size: 30px
+        line-height: 46px
+        color: $black
+
+        @media(max-width: $mobile)
+            padding-bottom: 16.41px
+
+    &__body
+        display: flex
+        gap: 14.22px
+
+        @media(max-width: $mobile)
+            display: flex
+            flex-direction: column
+            gap: 20px
+
+

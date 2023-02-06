@@ -1,0 +1,34 @@
+//- icons
+- var educationIcon = 'images/icons/education.svg' 
+- var calendarIcon = 'images/icons/calendar.svg' 
+- var addIcon = 'images/icons/add.svg'
+
+mixin li(icon, name)
+    li.content__item
+        img(src=icon)
+        a(href='#').menu-nav__link=name
+
+mixin card(logo, category, name, start, min, max, price)
+    article.card
+        div.card__container
+            button.card__button.button
+                img(src=addIcon)
+            a.card__logo: img(src=logo)
+            div.card__content 
+                div.content__top
+                    h3.category=category 
+                    h1.name=name
+                ul.content__list
+                    +li(educationIcon,'Postgraduate')
+                    +li(calendarIcon,'Every 12 weeks')
+                div.price=price
+                button.card__button-more More Info
+            div.card__hover.hover-card
+                h1.hover-card__name=name
+                div.hover-card__description
+                    ul.duration='Duration:'
+                        li Minimum: #{min}
+                        li Maximum: #{max}
+                    ul.start='Start Dates:'
+                        li=start
+                div.hover-card__price.price=price

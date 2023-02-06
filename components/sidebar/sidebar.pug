@@ -1,0 +1,36 @@
+//- icons
+- var arrowIcon = 'images/icons/arrow.svg';
+- var educationIcon = 'images/icons/education.svg';
+
+mixin submenu-nav__item(name)
+    li.submenu-nav__item
+        a(href='#').submenu-nav__link=name
+
+mixin li(id, name, submenu)
+    li.menu-nav__category
+        label(for=id) 
+            a(href='#').menu-nav__link=name
+            img(src=arrowIcon)
+        if submenu
+            ul.submenu-nav__list
+                +submenu-nav__item('Market Research Executive')
+                +submenu-nav__item('Child Psychologist')
+                +submenu-nav__item('Guidance Counsellor')
+                +submenu-nav__item('Behaviour Analyst')
+                +submenu-nav__item('Recreational Therapist')
+
+aside.menu
+    nav.menu-nav
+        div.menu-nav__header
+            img(src=educationIcon)
+            h3.menu-nav__title Careers
+        div.menu-nav__body
+            ul.menu-nav__list 
+                +li(1,'Business & Management',false)
+                +li(2,'Computing & IT',false)
+                +li(3,'Fashion & Media',false)
+                +li(4,'Finance & Accounting',false)
+                +li(5,'Law & Criminology',false)
+                +li(6,'Marketing & Communications',false)
+                +li(7,'Psychology & Social Sciences',true)
+    button.menu__button Show all programmes

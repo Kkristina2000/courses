@@ -1,0 +1,17 @@
+- var moreIcon = 'images/icons/more.svg'
+- var cards = [{logo: 'images/logos/logoEmbratur.svg', category: 'Business & Management', name: 'Master of Business Administration (CMI)', duration: {min: '18 months', max: '36 months'}, start: 'January, April, July, October', price: '£8,500'},{logo: 'images/logos/logoDanisco.svg', category: 'Business & Management', name: 'MSc Data Analytics and Information Systems Management', duration: {min: '18 months', max: '36 months'}, start: 'January, April, July, October', price: '£8,500'},{logo: 'images/logos/logoDanisco.svg', category: 'Business & Management', name: 'Master of Business Administration (CMI)', duration: {min: '18 months', max: '18 months'}, start: 'January, April, July, October', price: '£8,500'},{logo: 'images/logos/logoBarco.svg', category: 'Business & Management', name: 'Master of Business Administration (CMI)', duration: {min: '18 months', max: '18 months'}, start: 'January, April, July, October', price: '£8,500'},{logo: 'images/logos/logoBuffet.svg', category: 'Business & Management', name: 'Master of Business Administration (CMI)', duration: {min: '18 months', max: '18 months'}, start: 'January, April, July, October', price: '£8,500'},{logo: 'images/logos/logoBarco.svg', category: 'Business & Management', name: 'Master of Business Administration (CMI)', duration: {min: '18 months', max: '18 months'}, start: 'January, April, July, October', price: '£8,500'}];
+
+include ../../ui/card/card.pug
+
+// cards 
+.page__cards
+    .cards__items
+        for i in cards
+            +card(i.logo, i.category, i.name, i.start, i.duration.min, i.duration.max, i.price)
+
+    button.cards__more-btn.more-btn
+        span.more-btn__text More programmes
+        img(src=moreIcon).more-btn__icon
+
+
+
